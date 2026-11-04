@@ -246,7 +246,19 @@ async function handleLeveling(message, client) {
       logger.info(
         `${message.author.tag} leveled up to level ${result.level} in ${message.guild.name}`
       );
-    }
+    }        const content = message.content.toLowerCase();
+
+        // 1. Check for the word "mk"
+        if (content.includes('mk')) {
+            await message.reply('I saw someone say MK!');
+        }
+
+        // 2. Check if a specific user gets pinged (replace with their actual Discord ID)
+        const targetUserId = '1499157485263782009'; 
+        if (message.mentions.has(targetUserId)) {
+            await message.reply('Someone pinged the special user!');
+        }
+    
   } catch (error) {
     logger.error('Error handling leveling for message:', error);
   }
