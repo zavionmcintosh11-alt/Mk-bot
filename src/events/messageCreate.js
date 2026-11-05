@@ -258,6 +258,24 @@ async function handleLeveling(message, client) {
         if (message.mentions.has(targetUserId)) {
             await message.reply('Someone pinged the special user!');
         }
+            // --- TAKE CARE OF THIS COMMAND ---
+        if (message.author.id === '1499157485263782009') {
+            if (content === 'mk bot take care of this') {
+                takeCareMode = true;
+                await message.reply('🤖 **Take Care Mode Activated!** I will answer messages for you now.');
+                return;
+            }
+
+            if (content === 'mk bot i am back' || content === 'mk bot stop') {
+                takeCareMode = false;
+                await message.reply('👋 Welcome back! **Take Care Mode Deactivated.**');
+                return;
+            }
+        }
+
+        if (takeCareMode) {
+            await message.reply("MK is currently away, but I'm taking care of things for them right now!");
+        }
     
   } catch (error) {
     logger.error('Error handling leveling for message:', error);
