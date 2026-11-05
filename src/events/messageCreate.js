@@ -266,7 +266,7 @@ async function handleLeveling(message, client) {
                 return;
             }
 
-            if (content === 'mk bot i am back' || content === 'mk bot stop') {
+            if (content === 'mk bot i am back' || content === 'mk bot shut the fuck up') {
                 takeCareMode = false;
                 await message.reply('👋 Welcome back! **Take Care Mode Deactivated.**');
                 return;
