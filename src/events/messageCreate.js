@@ -21,7 +21,7 @@ import {
 
 const MESSAGE_XP_RATE_LIMIT_ATTEMPTS = 12;
 const MESSAGE_XP_RATE_LIMIT_WINDOW_MS = 10000;
-
+let takeCareMode = false;
 export default {
   name: Events.MessageCreate,
   async execute(message, client) {
